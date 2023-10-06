@@ -1,5 +1,57 @@
-main {
-  text-align: center;
-  vertical-align: center;
-  line-height: 100vh
+/*Search Bar  */
+.searchTaskBarContainerSearch{
+  width:22rem;
+  border-radius: .5rem;
+  height: 2rem;
+}
+.searchTaskBarContainer{
+  display: flex;
+  justify-content: center;
+  padding:3rem;
+}
+.btn{
+  margin-left:2rem;
+  cursor:pointer;
+  font-size:large;
+  border-radius: .5rem;
+  padding-inline:2rem;
+  padding-block:.2rem;
+}
+.danger:hover{
+  background:#f47171;
+  color:white;
+}
+.edit:hover{
+  background:#7a78e8;
+  color:white;
+}
+.btn:hover{
+  background:#78e87f;
+  color:white;
+}
+/* List */
+.listItemContainer{
+  padding:3rem;
+  width:80%;
+  margin:auto;
+}
+.listItem{
+  display:flex;
+  justify-content: space-between;
+  color: #191a1a;
+  border-radius: .5rem;
+  font-size: larger;
+  padding: .5rem;
+  padding-inline:1rem;
+  background: #d4d8d5;
+}
+.listItemEditArea{
+  
+}
+.listItemEditAreaLists{
+  margin-left:1rem;
+  border:2px solid #050505;
+  cursor:pointer;
+  padding-inline:.3rem;
+  border-radius:6rem;
 }
