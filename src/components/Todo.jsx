@@ -8,8 +8,6 @@ export default function todo() {
   function searchHandlerFunction(e) {
     setItemName(e.target.value)
   }
-
-
   const addItemHandlerFunction = () => {
     setItem((oldValue) => {
       return [...oldValue, itemName]
@@ -17,7 +15,11 @@ export default function todo() {
     setItemName('')
   }
   const deleteItemFunction = (e) => {
-    // return e
+    setItem((oldValue)=>{
+      return oldValue.filter((ele,index)=>{
+        return  index !== e
+      })
+    })
   }
   return (
     <>
