@@ -3,7 +3,7 @@ import ToDoApp from "./components/Todo"
 export default function App() {
   return (
     <main>
-          <ToDoApp />
+      <ToDoApp />
     </main>
   )
 }

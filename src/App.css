@@ -9,9 +9,14 @@
   justify-content: center;
   padding:3rem;
 }
+.searchTaskBarContainerArea{
+  display:flex;
+  flex-direction:column;
+}
 .btn{
   margin-left:2rem;
   cursor:pointer;
+  height: 2.5rem;
   font-size:large;
   border-radius: .5rem;
   padding-inline:2rem;
@@ -28,6 +33,14 @@
 .btn:hover{
   background:#78e87f;
   color:white;
+}
+.Error_Message{
+  color:red;
+}
+.Message{
+  /* font-size:large; */
+  font-weight:bolder;
+  margin: 0px;
 }
 /* List */
 .listItemContainer{

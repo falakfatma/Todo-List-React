@@ -1,7 +1,4 @@
 export default function ListItem(props) {
-  const deleteItemFunc = (e)=>{
-    return e.target.id
-  }
   return (
     <div className="listItem">
       <div>{props.text}</div>
@@ -15,9 +12,7 @@ export default function ListItem(props) {
           onClick={() => {
             props.onSelect(props.id)
           }}
-          id = {props.id}
-  
-          >
+          id={props.id}>
           X
         </span>
       </div>
