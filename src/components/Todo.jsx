@@ -1,27 +1,34 @@
 import React, { useState } from 'react'
 import List from "./List"
 export default function todo() {
-  const [ItemName, setItemName] = React.useState("");
-  const [listItemCancle, setlistItemCancle] = useState(0);
+  const [itemName, setItemName] = React.useState("");
+  const [itemKey, setItemKey] = React.useState(0);
+  const [deleteItem, setdeleteItem] = useState();
   const [Item, setItem] = useState([]);
   function searchHandlerFunction(e) {
     setItemName(e.target.value)
   }
-  function addItemHandlerFunction(event) {
-    console.log(Item)
-    // setItem(Item)
+
+
+  const addItemHandlerFunction = () => {
+    setItem((oldValue) => {
+      return [...oldValue, itemName]
+    })
+    setItemName('')
+  }
+  const deleteItemFunction = (e) => {
+    // return e
   }
   return (
     <>
       <div
         className="searchTaskBarContainer"
-        placeholder="Add Item"
-      >
+        placeholder="Add Item">
         <input
           className="searchTaskBarContainerSearch"
           placeholder="Add Item"
           onInput={searchHandlerFunction}
-          value={ItemName}
+          value={itemName}
         />
         <button
           className="btn"
@@ -29,8 +36,17 @@ export default function todo() {
           Add
         </button>
       </div>
-      <li>{ItemName}</li>
-      {/* <List /> */}
+      {
+        Item.map((Value, index) => {
+          return <List
+            className='listItem'
+            key={index}
+            id={index}
+            text={Value}
+            onSelect={deleteItemFunction}
+          />
+        })
+      }
     </>
   )
 }

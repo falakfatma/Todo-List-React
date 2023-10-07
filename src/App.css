@@ -37,6 +37,7 @@
 }
 .listItem{
   display:flex;
+  margin-top:1rem;
   justify-content: space-between;
   color: #191a1a;
   border-radius: .5rem;
