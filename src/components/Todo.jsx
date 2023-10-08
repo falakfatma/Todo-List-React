@@ -6,6 +6,7 @@ export default function todo() {
   const [itemId, setItemId] = React.useState()
   const [Item, setItem] = useState([]);
   const [editItem, setEditItem] = useState(false);
+  const [itemCategory, setItemCategory] = useState("Add");
   function searchHandlerFunction(e) {
     setItemName(e.target.value)
   }
@@ -16,10 +17,12 @@ export default function todo() {
     } else {
       setFillDataItemError("")
     };
-    if(editItem){
+    if (editItem) {
       Item[itemId] = itemName
-        setEditItem(false)
-        return
+      setEditItem(false)
+      setItemName('')
+      setItemCategory("Add")
+      return
     }
     setItem((oldValue) => {
       return [...oldValue, itemName]
@@ -35,10 +38,11 @@ export default function todo() {
   }
   const editItemFunction = (e) => {
     setItemName(Item[e])
+    setItemCategory("Edit")
     setEditItem(true)
     setItemId(e)
     // console.log(Item[e] = itemName)
-   
+
     // = itemName
     // console.log()
   }
@@ -61,7 +65,7 @@ export default function todo() {
         <button
           className="btn"
           onClick={addItemHandlerFunction}>
-          Add
+          {itemCategory}
         </button>
       </div>
       {
